@@ -1,8 +1,9 @@
 ﻿#include <iostream>
+#include <Windows.h>
 
 using namespace std;
 
-int c_nat()
+/*int c_nat()
 {
 	int x;
 	while (!(std::cin >> x) || std::cin.peek() != '\n' || round(x) != x || x <= 0)
@@ -23,7 +24,7 @@ int c_p()
 		std::cout << "Некоректный ввод данных" << std::endl;
 	}
 	return x;
-}
+}*/
 
 int check(int str[], int st, int end, int& ch)
 {
@@ -50,9 +51,15 @@ int check(int str[], int st, int end, int& ch)
 
 int main()
 {
+	HINSTANCE lib = LoadLibrary(L"check_d_dinamic.dll");
+	typedef int (*f)();
+	f c_nat = (f)GetProcAddress(lib, "c_nat");
+	f c_p = (f)GetProcAddress(lib, "c_p");
 	setlocale(LC_ALL, "RU");
 	cout << "Введите размерность одномерного массива N\n";
 	int N = c_nat();
+
+	cout << "Введите элементы\n";
 
 	int* str = new int[N];
 	for (int i = 0; i < N; i++)
@@ -71,5 +78,5 @@ int main()
 	{
 		cout << "Условие выполняется";
 	}
-
+	FreeLibrary(lib);
 }

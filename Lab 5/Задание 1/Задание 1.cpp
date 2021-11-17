@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include "..\check_d\Header.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ int sum_d(int* mass[], int N)
 	return sum;
 }
 
-int c_nat()
+/*int c_nat()
 {
 	int x;
 	while (!(std::cin >> x) || std::cin.peek() != '\n' || round(x) != x || x <= 0)
@@ -25,7 +26,7 @@ int c_nat()
 		std::cout << "Некоректный ввод данных" << std::endl;
 	}
 	return x;
-}
+}*/
 
 int main()
 {

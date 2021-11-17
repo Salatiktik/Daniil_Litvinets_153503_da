@@ -2,10 +2,11 @@
 //
 
 #include <iostream>
+#include "..\check_d\Header.h"
 
 using namespace std;
 
-int c_nat()
+/*int c_nat()
 {
 	int x;
 	while (!(std::cin >> x) || std::cin.peek() != '\n' || round(x) != x || x <= 0)
@@ -27,11 +28,13 @@ int c_p()
 		std::cout << "Некоректный ввод данных" << std::endl;
 	}
 	return x;
-}
+}*/
 
 int main()
 {
+	cout << "Введите размерность матрицы N x M\n";
 	int N = c_nat(), M = c_nat();
+	cout << "Введите элементы матрицы\n";
 
 	int** mass = new int* [N];
 	for (int i = 0; i < N; i++)
@@ -62,11 +65,12 @@ int main()
 		}
 	}
 
+	cout << "Получившаяся матрица:\n";
 	int pr = 1;
 	for (int i = 0; i < p; i++)
 	{
 		pr *= ans[i];
 		cout << ans[i] << " ";
 	}
-	cout << "\n" << pr;
+	cout << "\nПроизведение элементов \n" << pr;
 }
