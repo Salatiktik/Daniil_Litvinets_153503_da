@@ -17,6 +17,16 @@ int f_function(int n)
     }
 }
 
+int s_function(int i)
+{
+    int s = 0;
+    for (int z = 1; z <= i; z++)
+    {
+        s += f_function(z);
+    }
+    return s;
+}
+
 int c_nat()
 {
     int x;
@@ -39,13 +49,6 @@ int main()
     }
     for (int z = 0; z < n; z++)
     {
-        for (int i = 1; i <= mass[z]; i++)
-        {
-            s += f_function(i);
-        }
-        std::cout << s << endl;
-        s = 0;
+        cout << s_function(z) << "\n";
     }
-
- 
 }

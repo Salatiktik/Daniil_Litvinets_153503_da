@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Header_dinamic.h"
 
-extern "C" _declspec(dllexport)
+extern "C" __declspec(dllexport)
 int c_nat()
 {
 	int x;
@@ -17,7 +17,7 @@ int c_nat()
 	return x;
 }
 
-extern "C" _declspec(dllexport)
+extern "C" __declspec(dllexport)
 int c_p()
 {
 	int x;

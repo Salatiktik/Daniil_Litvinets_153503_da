@@ -1,4 +1,7 @@
-﻿#include <iostream>
+﻿//лабораторная работа 5, задание 2. Выполнил Литвинец Даниил Николаевич
+/*Для массива рекурсивно проверить условие -10<x^3<20*/
+
+#include <iostream>
 #include <Windows.h>
 
 using namespace std;
@@ -32,7 +35,7 @@ int check(int str[], int st, int end, int& ch)
 	int e = end;
 	if ((e == 0 && s== 0) || e - s == 0 || s - e == 0)
 	{
-		if (str[e] >= 20 || str[e] <= -10)
+		if (pow(str[e],3) >= 20 || pow(str[e], 3) <= -10)
 		{
 			ch++;
 			return 0;
@@ -53,8 +56,9 @@ int main()
 {
 	HINSTANCE lib = LoadLibrary(L"check_d_dinamic.dll");
 	typedef int (*f)();
+
 	f c_nat = (f)GetProcAddress(lib, "c_nat");
-	f c_p = (f)GetProcAddress(lib, "c_p");
+	f c_p= (f)GetProcAddress(lib, "c_p");
 	setlocale(LC_ALL, "RU");
 	cout << "Введите размерность одномерного массива N\n";
 	int N = c_nat();
@@ -78,5 +82,4 @@ int main()
 	{
 		cout << "Условие выполняется";
 	}
-	FreeLibrary(lib);
 }

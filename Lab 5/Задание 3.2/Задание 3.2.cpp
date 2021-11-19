@@ -1,5 +1,5 @@
-﻿// Задание 3.2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿// Лабораторная работа 5, Задание 3.2. Выполнил Литвинец Даниил Николаевич
+/*Найти нулевые элементы в массиве, вывести их. Переставить в обратном порядке весь массив*/
 
 #include <iostream>
 
@@ -29,6 +29,33 @@ int c_p()
 	return x;
 }
 
+void find_zero(double* mass[], int& ch, int N, int M)//поиск нуля
+{
+	for (int i = 0; i < N; i++)
+	{
+		for (int z = 0; z < M; z++)
+		{
+			if (mass[i][z] == 0)
+			{
+				cout << "(" << i + 1 << ";" << z + 1 << ") ";
+				ch++;
+			}
+		}
+	}
+}
+
+void reverse_mat(double** mass,int N,int M)
+{
+	for (int i = N - 1; i >= 0; i--)
+	{
+		for (int z = M - 1; z >= 0; z--)
+		{
+			cout << mass[i][z] << " ";
+		}
+		cout << "\n";
+	}
+}
+
 int main()
 {
 	setlocale(LC_ALL, "RU");
@@ -36,10 +63,10 @@ int main()
 	int N = c_nat(), M = c_nat();
 
 	cout << "Введите элементы массива\n";
-	int** mass = new int* [N];
+	double** mass = new double* [N];
 	for (int i = 0; i < N; i++)
 	{
-		mass[i] = new int[N];
+		mass[i] = new double[N];
 		for (int z = 0; z < M; z++)
 		{
 			mass[i][z] = c_p();
@@ -50,27 +77,9 @@ int main()
 
 	int ch = 0;
 
-	for (int i = 0; i < N; i++)
-	{
-		for (int z = 0; z < M; z++)
-		{
-			if (mass[i][z] == 0)
-			{
-				cout << "(" << i+1 << ";" << z+1 << ") ";
-				ch++;
-			}
-		}
-	}
+	find_zero(mass, ch, N, M);
 
 	cout << "Количество нулевых элементов равно " << ch << endl;
 
-	for (int i = N - 1; i >= 0; i--)
-	{
-		for (int z = M - 1; z >= 0; z--)
-		{
-			cout << mass[i][z] << " ";
-		}
-		cout << "\n";
-	}
-
+	reverse_mat(mass, N, M);
 }

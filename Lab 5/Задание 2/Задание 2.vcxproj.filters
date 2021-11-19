@@ -22,4 +22,7 @@
   <ItemGroup>
     <None Include="..\Debug\check_d_dinamic.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\Debug\check_d_dinamic.lib" />
+  </ItemGroup>
 </Project>
