@@ -21,8 +21,8 @@ int check(int str[], int st, int end, int& ch)
 		}
 	}
 	{
-		check(str, s, (e + s) / 2, ch);
-		check(str, ((e + s) / 2) + 1, e, ch);
+		check(str, s, long long(long long(e) + long long(s)) / 2, ch);
+		check(str, long long(((long long(e) + long long(s)) / 2) + 1), e, ch);
 	}
 	return 0;
 }

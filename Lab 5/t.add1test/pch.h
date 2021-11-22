@@ -8,4 +8,4 @@
 
 int F_function(int n);
 
-int S_function(int p, int q);
+long long S_function(long long int p,long long int q);

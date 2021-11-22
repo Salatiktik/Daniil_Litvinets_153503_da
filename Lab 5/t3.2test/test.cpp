@@ -42,11 +42,11 @@ TEST(Case3, Test3_2)
 {
 	int N = 5, M = 3, ch = 0;
 	double** mass = new double* [N];
-	mass[0] = new double [M] { 7, 5, 1 };
-	mass[1] = new double [M] { -3, 2.3, -91 };
+	mass[0] = new double [M] { 1.7976931348623158E+308, 5, 1 };
+	mass[1] = new double [M] { 1.7976931348623158E+308, 2.3, -91 };
 	mass[2] = new double [M] { 6, 0, 5 };
-	mass[3] = new double [M] { 3, -6, 9 };
-	mass[4] = new double [M] { 0, -3, 1 };
+	mass[3] = new double [M] { 3, -1.7976931348623158E+308, 9 };
+	mass[4] = new double [M] { 0, -3, -1.7976931348623158E+308 };
 	for (int i = 0; i < N; i++)
 	{
 		for (int z = 0; z < M; z++)

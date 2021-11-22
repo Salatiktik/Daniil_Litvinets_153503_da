@@ -1,4 +1,6 @@
-﻿#include <iostream>
+﻿//Лабораторная работа 5, задание доп 2. Выполнил Литвинец Даниил Николаевич
+/*Вычислить x по рекурсивной функции*/
+#include <iostream>
 #include <cmath>
 
 void c_nat(long long& k, long long& n, long long& t)
@@ -11,7 +13,8 @@ void c_nat(long long& k, long long& n, long long& t)
 	}
 }
 
-long long start(long long**& mass, long long& i,long long& k,long long& n, long long& t) {
+long long start(long long**& mass, long long& i,long long& k,long long& n, long long& t)//ввод данных
+{
 	int ch = 0;
 	while (ch != 1)
 	{
@@ -47,9 +50,9 @@ int main()
 	long long** mass = (long long**)malloc(sizeof(long long*));
 	mass[0] = new long long[3];
 
-	c_nat(k, n, t);
+	c_nat(k, n, t);//первый ввод
 
-	start(mass, i, k, n, t);
+	start(mass, i, k, n, t);//
 
 	for (int z = 0; z < i; z++)
 	{

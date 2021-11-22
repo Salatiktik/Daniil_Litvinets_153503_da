@@ -45,12 +45,15 @@ int F_function(int n)//сама функция
 	}
 }
 
-int S_function(int p, int q)//сумма
+long long S_function(int p, int q)//сумма
 {
-	int  sum = 0;
+	int qwe = 0;
+	int  long long sum = 0;
 	for (int i = p; i <= q; i++)
 	{
 		sum += F_function(i);
+
+		qwe++;
 	}
 	return sum;
 }

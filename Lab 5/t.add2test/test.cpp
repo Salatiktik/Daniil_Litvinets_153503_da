@@ -17,5 +17,35 @@ TEST(Case3, Test_a2) {
 
 TEST(Case4, Test_a2) {
 	unsigned long long k = 2323, n = 99999999999, t = 8;
-	EXPECT_EQ(pow_bin(k, n, pow(10, t)), 39087387);
+	EXPECT_EQ(pow_bin(k, n, long long(pow(10, t))), 39087387);
 }
+
+TEST(Case5, Test_a2) {
+	unsigned long long k = 2323, n = INT_MAX, t = 8;
+	EXPECT_EQ(pow_bin(k, n, long long(pow(10, t))), 60357147);
+}
+
+TEST(Case6, Test_a2) {
+	unsigned long long k = INT_MAX, n = INT_MAX, t = 8;
+	EXPECT_EQ(pow_bin(k, n, long long(pow(10, t))), 66385663);
+}
+
+TEST(Case7, Test_a2) {
+	unsigned long long k = INT_MAX, n = INT_MAX, t = INT_MAX;
+	EXPECT_EQ(pow_bin(k, n, long long(pow(10, t))), 9223372034707292159);
+}
+TEST(Case8, Test_a2) {
+	unsigned long long k = INT_MAX+1, n = INT_MAX+1, t = INT_MAX+1;
+	EXPECT_EQ(pow_bin(k, n, long long(pow(10, t))), 0);
+}
+
+TEST(Case9, Test_a2) {
+	unsigned long long k = 1, n = 1, t = 1;
+	EXPECT_EQ(pow_bin(k, n, long long(pow(10, t))), 1);
+}
+
+TEST(Case10, Test_a2) {
+	unsigned long long k = 0, n = 0, t = 0;
+	EXPECT_EQ(pow_bin(k, n, long long(pow(10, t))), 0);
+}
+

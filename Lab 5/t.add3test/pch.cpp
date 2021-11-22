@@ -3,7 +3,7 @@
 //
 
 #include "pch.h"
-int f_function(int n)
+long long f_function(int n)
 {
     if (n % 2 != 0)
     {
@@ -15,12 +15,17 @@ int f_function(int n)
     }
 }
 
-int s_function(int i)
+long long s_function(int i)
 {
-    int s = 0;
-    for (int z = 1; z <= i; z++)
+    int qwe = 0;
+    long long s = 0;
+    for (long long z = 1; z <= i; z++)
     {
+
         s += f_function(z);
+        qwe++;
+        if (s < 0)
+            return 0;
     }
     return s;
 }

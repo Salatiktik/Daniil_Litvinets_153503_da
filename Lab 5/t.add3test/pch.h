@@ -5,7 +5,7 @@
 #pragma once
 
 #include "gtest/gtest.h"
-int f_function(int n);
+long long f_function(int n);
 
-int s_function(int i);
+long long s_function(int i);
 

@@ -37,10 +37,12 @@ TEST(Case3, Task1) {
 TEST(Case4, Task1) {
 	int n = 4, m = 4;
 	int** mass = new int* [n];
-	mass[0] = new int[m] {1, 2, 3,5};
-	mass[1] = new int[m] {4, 2, 9,7};
-	mass[2] = new int[m] {1, 0, 3,0};
-	mass[3] = new int[m] {2, 8, 3,6};
-	EXPECT_EQ(sum_d(mass, n), 12);
+	mass[0] = new int[m] {INT_MAX, 2, 3,5};
+	mass[1] = new int[m] {4, INT_MAX, 9,7};
+	mass[2] = new int[m] {1, 0, INT_MAX,0};
+	mass[3] = new int[m] {2, 8, 3,INT_MAX};
+	EXPECT_EQ(sum_d(mass, n), 4*INT_MAX);
 }
+
+
 

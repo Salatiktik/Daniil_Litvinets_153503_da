@@ -20,12 +20,23 @@ int F_function(int n)
 	}
 }
 
-int S_function(int p, int q)
+long long S_function( long long int p, long long int q)//сумма
 {
-	int  sum = 0;
-	for (int i = p; i <= q; i++)
+	int qwe = 0;
+	long long sum = 0;
+	for (long long i = p; i <= q; i++)
 	{
+		if (qwe % 1000000000 == 0)
+		{
+			std::cout << (double)i / q*100;
+		}
 		sum += F_function(i);
+
+		qwe++;
+		if (i / q < 0)
+		{
+			return 0;
+		}
 	}
 	return sum;
 }
