@@ -44,5 +44,15 @@ TEST(Case4, Task1) {
 	EXPECT_EQ(sum_d(mass, n), 4*INT_MAX);
 }
 
+TEST(Case5, Task1) {
+	int n = 4, m = 4;
+	int** mass = new int* [n];
+	mass[0] = new int[m] {0, INT_MAX, INT_MAX, INT_MAX};
+	mass[1] = new int[m] {INT_MAX, 0, INT_MAX, INT_MAX};
+	mass[2] = new int[m] {INT_MAX, INT_MAX, 0, INT_MAX};
+	mass[3] = new int[m] {INT_MAX, INT_MAX, INT_MAX, 0};
+	EXPECT_EQ(sum_d(mass, n), 0);
+}
+
 
 

@@ -17,13 +17,11 @@ long long f_function(int n)
 
 long long s_function(int i)
 {
-    int qwe = 0;
     long long s = 0;
     for (long long z = 1; z <= i; z++)
     {
 
         s += f_function(z);
-        qwe++;
         if (s < 0)
             return 0;
     }

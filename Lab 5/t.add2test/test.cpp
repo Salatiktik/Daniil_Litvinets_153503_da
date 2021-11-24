@@ -26,17 +26,17 @@ TEST(Case5, Test_a2) {
 }
 
 TEST(Case6, Test_a2) {
-	unsigned long long k = INT_MAX, n = INT_MAX, t = 8;
-	EXPECT_EQ(pow_bin(k, n, long long(pow(10, t))), 66385663);
+	unsigned long long k = 10000000000000000000-2, n = 10000000000000000000-2, t = 8;
+	EXPECT_EQ(pow_bin(k, n, long long(pow(10, t))), 51872768);
 }
 
 TEST(Case7, Test_a2) {
-	unsigned long long k = INT_MAX, n = INT_MAX, t = INT_MAX;
-	EXPECT_EQ(pow_bin(k, n, long long(pow(10, t))), 9223372034707292159);
+	unsigned long long k = 10000000000000000000, n = 10000000000000000000, t = 9;
+	EXPECT_EQ(pow_bin(k, n, long long(pow(10, t))), 0);
 }
 TEST(Case8, Test_a2) {
-	unsigned long long k = INT_MAX+1, n = INT_MAX+1, t = INT_MAX+1;
-	EXPECT_EQ(pow_bin(k, n, long long(pow(10, t))), 0);
+	unsigned long long k = 10000000000000000000-1, n = 10000000000000000000-1, t = 9;
+	EXPECT_EQ(pow_bin(k, n, long long(pow(10, t))), 921859071);
 }
 
 TEST(Case9, Test_a2) {

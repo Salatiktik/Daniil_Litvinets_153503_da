@@ -20,7 +20,7 @@ int c_nat()
 
 int str_in(char*& str, int N, int& e)
 {
-    cin.getline(str,80);
+    cin.getline(str,81);
     int ch = 0;
     for (int i = 0; i < N; i++)
     {
@@ -39,30 +39,7 @@ int str_in(char*& str, int N, int& e)
             break;
         }
     }
-    while (ch != 0)
-    {
-        std::cout << "Некоректный ввод\n";
-        for (int i = 0; i < N; i++)
-        {
-            str[i] = 'Н';
-        }
-        cin.getline(str, 80);
-        ch = 0;
-        for (int i = 0; i < N; i++)
-        {
-            if (str[i] != '1' && str[i] != '0' && str[i] != ' ' && (int)str[i] != -51)
-            {
-                ch++;
-            }
-            if (str[i] == 'Н')
-            {
-                ch--;
-                break;
-                e = i;
-            }
-        }
-    }
-    return 0;
+    return ch;
 }
 
 void shortest_group(char*& str, int& s, int& e, int& N)
@@ -72,7 +49,6 @@ void shortest_group(char*& str, int& s, int& e, int& N)
     {
         if ((int)str[i] == 32||(int) str[i]==0)
         {
-            cout << i << "\n";
             last_void = t_void;
             t_void = i;
             if (t_void - last_void < shortest_e - shortest_s)
@@ -93,8 +69,14 @@ int main()
     int N = 81;
     char* str = new char[N];
     int s = 0, e ;
-    str_in(str, N,e);
-    
+    while(str_in(str, N, e))
+    {
+        delete[81]str;
+        str = new char[N];
+        s = 0;
+        e = N - 1;
+        cout << "Некоректный ввод";
+    }
     shortest_group(str, s, e, N);
     std::cout << "Кратчайшая группа:\n";
     for (int i = s + 1; i < e; i++)

@@ -28,7 +28,7 @@ long long S_function( long long int p, long long int q)//сумма
 	{
 		if (qwe % 1000000000 == 0)
 		{
-			std::cout << (double)i / q*100;
+			std::cout << (double)i / q*100 << "%\n";
 		}
 		sum += F_function(i);
 

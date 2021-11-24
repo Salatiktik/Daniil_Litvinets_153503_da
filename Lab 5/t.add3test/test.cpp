@@ -11,17 +11,17 @@ TEST(Case2, Task_a3) {
 }
 
 TEST(Case3, Task_a3) {
-    int n = INT_MAX-1;
-    EXPECT_EQ(s_function(n), 1537228670661645654);
+    int n = 1000000000-1;
+    EXPECT_EQ(s_function(n), 333333333332228101);
 }
 
 TEST(Case4, Task_a3) {
-    int n = INT_MAX;
-    EXPECT_EQ(s_function(n), 1537228672809129301);
+    int n = 1000000000;
+    EXPECT_EQ(s_function(n), 333333333334181226);
 }
 
 TEST(Case5, Task_a3) {
-    int n = INT_MAX+1;
-    EXPECT_EQ(s_function(n), 0);
+    int n = 1000000000+1;
+    EXPECT_EQ(s_function(n), 333333334334181227);
 }
 
