@@ -1,5 +1,4 @@
-﻿// Lab 6.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿// Лабораторная работа 6, задание 1 вариант 1. Выполнил Литвинец Даниил
 
 #include <iostream>
 #include <iomanip>
@@ -47,7 +46,7 @@ void shortest_group(char*& str, int& s, int& e, int& N)
     int shortest_s = s, shortest_e = e, last_void, t_void = -1;
     for (int i = 0; i <= e+1; i++)
     {
-        if ((int)str[i] == 32||(int) str[i]==0)
+        if (((int)str[i] == 32)&&((int)str[i+1]!= 32))
         {
             last_void = t_void;
             t_void = i;
@@ -64,7 +63,6 @@ void shortest_group(char*& str, int& s, int& e, int& N)
 
 int main()
 {
-    cin >> noskipws;
     setlocale(LC_ALL, "RU");
     int N = 81;
     char* str = new char[N];

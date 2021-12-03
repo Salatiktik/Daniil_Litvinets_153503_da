@@ -19,7 +19,7 @@ int c_nat()
 double c_p()
 {
 	double x;
-	while (!(std::cin >> x) || std::cin.peek() != '\n')
+	while (!(std::cin >> x) || std::cin.peek() != '\n'||x<=0)
 	{
 		std::cin.clear();
 		std::cin.ignore(100500, '\n');
